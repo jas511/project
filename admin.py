@@ -15,12 +15,12 @@ class admin:
 
         self.root.title("library manager")
 
-        img1=Image.open(r"C:\Users\jasle\Downloads\[Original size] topic #5.png")
-        img1=img1.resize((1600,950),Image.ADAPTIVE)
-        self.photoimg1=ImageTk.PhotoImage(img1)
+        # img1=Image.open(r"C:\Users\jasle\Downloads\[Original size] topic #5.png")
+        # img1=img1.resize((1600,950),Image.ADAPTIVE)
+        # self.photoimg1=ImageTk.PhotoImage(img1)
 
-        lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
-        lblimg.place(x=0,y=0,width=1600,height=950)
+        # lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
+        # lblimg.place(x=0,y=0,width=1600,height=950)
 
         self.firstLbl = Label(self.root, text = 'Admin name',fg = 'black',bg='#29465B', font = ('Britannic Bold', 15, 'bold'), wraplength=400, justify='left') 
         self.firstLbl.pack() 

@@ -10,17 +10,16 @@ class FrameWindow():
       self.root.state("zoomed")
       self.root.resizable(False, False) 
       self.frame =Frame(self.root, width=500, height=500) 
-      
       self.frame.place(x = 0, y = 0)
       self.frame1 =Frame(self.root, width=1000, height=1000) 
       self.frame1.place(x = 0, y = 0)  
       self.root.title("login")
-      img1=Image.open(r"C:\Users\jasle\OneDrive\Pictures\Screenshots\Screenshot 2023-09-16 180012.png")
-      img1=img1.resize((1600,950),Image.ADAPTIVE)
-      self.photoimg1=ImageTk.PhotoImage(img1)
+      # img1=Image.open(r"C:\Users\jasle\OneDrive\Pictures\Screenshots\Screenshot 2023-09-16 180012.png")
+      # img1=img1.resize((1600,950),Image.ADAPTIVE)
+      # self.photoimg1=ImageTk.PhotoImage(img1)
 
-      lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
-      lblimg.place(x=0,y=0,width=1600,height=950)
+      # lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
+      # lblimg.place(x=0,y=0,width=1600,height=950)
       
       self.firstLbl = Label(self.root, text = 'Username',fg = 'black',bg='WHITE', font = ('Britannic Bold', 15, 'bold'), wraplength=400, justify='left') 
       self.firstLbl.pack() 

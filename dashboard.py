@@ -7,16 +7,15 @@ class Dashboard:
             self.root = Tk()
             self.root.state("zoomed")
             self.root.resizable(False, False) 
-            self.frame =Frame(self.root, width=1500, height=800) 
+            self.frame =Frame(self.root, width=1500, height=800,bg="white") 
             self.frame.place(x = 0, y = 0)
             self.root.title("Dashboard")
 
-            img1=Image.open(r"C:\Users\jasle\OneDrive\Pictures\Screenshots\Screenshot 2023-09-17 151834.png")
-            img1=img1.resize((1600,950),Image.ADAPTIVE)
-            self.photoimg1=ImageTk.PhotoImage(img1)
+            self.leftpanel = Frame(self.frame,width=300,height=800,bg="grey")
+            self.leftpanel.place(x=0,y=0)
 
-            lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
-            lblimg.place(x=0,y=0,width=1600,height=950)
+            self.toppanel = Frame(self.frame,width=1200,height=100,bg="grey")
+            self.toppanel.place(x=300,y=0)
 
             self.issuebookBtn = Button(self.root, text = 'Issue Book',font=("sans=serif",13),width=15,command=self.issuefn) 
             self.issuebookBtn.place(x = 350, y = 450)
