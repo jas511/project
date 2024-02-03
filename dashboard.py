@@ -13,29 +13,33 @@ class Dashboard:
 
             self.leftpanel = Frame(self.frame,width=300,height=800,bg="grey")
             self.leftpanel.place(x=0,y=0)
-
             self.toppanel = Frame(self.frame,width=1200,height=100,bg="grey")
             self.toppanel.place(x=300,y=0)
+            self.contentpanel = Frame(self.frame,width=1200,height=700,bg="white")
+            self.contentpanel.place(x=300,y=100)
 
-            self.issuebookBtn = Button(self.root, text = 'Issue Book',font=("sans=serif",13),width=15,command=self.issuefn) 
-            self.issuebookBtn.place(x = 350, y = 450)
 
-            self.returnBtn=Button(self.root,text="Return Book",font=("sans-serif",13),width=15,command=self.returnfn)
-            self.returnBtn.place(x=350,y=700)
+            self.issuebookBtn = Button(self.contentpanel, text = 'Issue Book',font=("sans=serif",20,"bold"),width=10,bg="#ff8080",command=self.issuefn) 
+            self.issuebookBtn.place(x = 100, y = 150)
 
-            self.donateBtn=Button(self.root,text="Donate Book",font=("sans-serif",13),width=15,command=self.donatefn)
-            self.donateBtn.place(x=1050,y=450)
+            self.returnBtn=Button(self.contentpanel,text="Return Book",font=("sans-serif",20,"bold"),width=10,bg="#C0FF80",command=self.returnfn)
+            self.returnBtn.place(x=450,y=150)
 
-            self.statusBtn=Button(self.root,text="Status",font=("sans-serif",13),width=15,command=self.statusfn)
-            self.statusBtn.place(x=1050,y=700)
+            self.donateBtn=Button(self.contentpanel,text="Donate Book",font=("sans-serif",20,"bold"),width=10,bg="#80FFFF",command=self.donatefn)
+            self.donateBtn.place(x=100,y=300)
 
-            self.logoutBtn=Button(self.root,text="Logout",command=self.logoutfn)
-            self.logoutBtn.place(x=1490,y=5)
+            self.statusBtn=Button(self.contentpanel,text="Status",font=("sans-serif",20,"bold"),width=10,bg="#C080FF",command=self.statusfn)
+            self.statusBtn.place(x=450,y=300)
+
+            self.logoutBtn=Button(self.contentpanel,text="Logout",font="sans-serif 12 bold",command=self.logoutfn)
+            self.logoutBtn.place(x=950,y=20)
+
             self.root.mainloop()
 
         def logoutfn(self):
-               self.root.destroy()
-               login.FrameWindow()
+               if messagebox.askyesno("Logout","Do yo really want to logout?"):
+                     self.root.destroy()
+                     login.FrameWindow()
         def issuefn(self):
                self.root.destroy()
                issuebook.issue()

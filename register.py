@@ -6,7 +6,7 @@ class FrameWindow:
       def __init__(self):
             self.root = Tk()
             self.root.state('zoomed')
-            self.root.resizable(False, False) 
+            self.root.resizable(False, False)
             self.frame =Frame(self.root, width=1600, height=900,bg="white") 
             self.frame.place(x = 0, y = 0)
             self.root.title("Registration")
@@ -65,17 +65,14 @@ class FrameWindow:
                   messagebox.showinfo("Username","Invalid Username!")
             else:
                   details = (self.mail_entry.get(),self.user_entry.get(),self.pass_entry.get())
-                  res = dbms.registerUser(details)
-                  if res[0]:
+                  res = dbms.registeruser(details)
+                  print(res)
+                  if res:
                         messagebox.showinfo("Registration","Account created successfully")
                         self.root.destroy()
                         login.FrameWindow()
                   else:
-                  # error for already existed email or username
-                        if 'username' in res[1]:
-                              messagebox.showerror('Alert', 'Username already taken.')
-                        if 'email' in res[1]:
-                              messagebox.showerror('Alert', 'Email is already registered.')
+                        messagebox.showerror('Alert', 'Username or email already taken.')
 
 
 

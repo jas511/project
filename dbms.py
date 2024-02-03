@@ -9,10 +9,11 @@ cursor = Info.cursor()
 
 def registeruser(data):
     try:
-        cursor.execute("INSERT INTO `users` (`email`',`username`,`password`) VALUES (%s,%s,%s)",data)
+        cursor.execute("INSERT INTO `users` (`email`,`username`,`password`) VALUES (%s,%s,%s)",data)
         Info.commit()
         return True
-    except:
+    except Exception as e:
+        print(e)
         return False
 
 def loginuser(data):
