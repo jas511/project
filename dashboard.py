@@ -11,12 +11,16 @@ class Dashboard:
             self.frame.place(x = 0, y = 0)
             self.root.title("Dashboard")
 
-            self.leftpanel = Frame(self.frame,width=300,height=800,bg="grey")
-            self.leftpanel.place(x=0,y=0)
-            self.toppanel = Frame(self.frame,width=1200,height=100,bg="grey")
-            self.toppanel.place(x=300,y=0)
-            self.contentpanel = Frame(self.frame,width=1200,height=700,bg="white")
-            self.contentpanel.place(x=300,y=100)
+            self.leftpanel = Frame(self.frame,width=250,height=700,bg="#333232")
+            self.leftpanel.place(x=0,y=70)
+            self.leftcorner = Frame(self.frame,width=250,height=70,bg="#b57424")
+            self.leftcorner.place(x=0,y=0)
+            self.title = Label(self.leftcorner,text="Library Manager",fg="white",bg="#b57424",font="sans-serif 20 bold")
+            self.title.place(x=10,y=17)
+            self.toppanel = Frame(self.frame,width=1200,height=70,bg="#fca232")
+            self.toppanel.place(x=250,y=0)
+            self.contentpanel = Frame(self.frame,width=1200,height=700,bg="white") # #454545
+            self.contentpanel.place(x=250,y=70)
 
 
             self.issuebookBtn = Button(self.contentpanel, text = 'Issue Book',font=("sans=serif",20,"bold"),width=10,bg="#ff8080",command=self.issuefn) 
