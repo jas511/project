@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox 
+import dashboard_admin
 class admin_login:
         def __init__(self):
             self.root = Tk()
@@ -34,8 +35,14 @@ class admin_login:
             self.underline2 = Frame(self.frame,width=270, height=2, bg="black")
             self.underline2.place(x=865,y=396)
             
+            self.signup_btn = Button(self.frame,text="Log in",border=0, fg="green", cursor="hand2",bg="white",font="Arial 13", command=self.loginnfn)
+            self.signup_btn.place(x=945,y=498)
+
             self.root.mainloop()
-                     
+
+        def loginnfn(self):
+               self.root.destroy()
+               dashboard_admin.Dashboard()             
         
 
 if __name__ =='__main__':
