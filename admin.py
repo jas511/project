@@ -1,43 +1,42 @@
 from tkinter import *
 from tkinter import messagebox 
-from PIL import ImageTk,Image
+class admin_login:
+        def __init__(self):
+            self.root = Tk()
+            self.root.state("zoomed")
+            self.root.resizable(False, False) 
+            self.frame =Frame(self.root, width=1500, height=800,bg="white") 
+            self.frame.place(x = 0, y = 0)
+            self.root.title("Admin")
 
+            self.leftpanel = Frame(self.frame,width=250,height=700,bg="#333232")
+            self.leftpanel.place(x=0,y=70)
+            self.leftcorner = Frame(self.frame,width=250,height=70,bg="#b57424")
+            self.leftcorner.place(x=0,y=0)
+            self.title = Label(self.leftcorner,text="Library Manager",fg="white",bg="#b57424",font="sans-serif 20 bold")
+            self.title.place(x=10,y=17)
+            self.toppanel = Frame(self.frame,width=1200,height=70,bg="#fca232")
+            self.toppanel.place(x=250,y=0)
+            self.contentpanel = Frame(self.frame,width=1200,height=700,bg="white") # #454545
+            self.contentpanel.place(x=250,y=70)
 
-class admin:
-    def __init__(self):
-        self.root=Tk()
-        self.root.state("zoomed")
-        self.root.resizable(False,False)
-        self.frame =Frame(self.root, width=1600, height=950) 
-        self.frame.place(x = 0, y = 0)
-        self.frame1 =Frame(self.root, width=1600, height=950) 
-        self.frame1.place(x = 0, y = 0)
+            self.firstLbl = Label(self.frame, text = 'Admin name', fg = 'black',bg='WHITE', font="Arial 20 bold") 
+            self.firstLbl.place(x=685,y=280)
+            self.user_entry = Entry(self.frame, width=30, font="Arial 12", border=0)
+            self.user_entry.place(x=865,y=286)
+            self.underline1 = Frame(self.frame,width=270, height=2, bg="black")
+            self.underline1.place(x=865,y=306)
 
-        self.root.title("library manager")
+            self.passLbl = Label(self.frame, text = 'Password', fg = 'black',bg='WHITE', font="Arial 20 bold") #
+            self.passLbl.place(x=685,y=370) 
+            self.pass_entry = Entry(self.frame, width=30, font="Arial 12", border=0,show="*")
+            self.pass_entry.place(x=865,y=376)
+            self.underline2 = Frame(self.frame,width=270, height=2, bg="black")
+            self.underline2.place(x=865,y=396)
+            
+            self.root.mainloop()
+                     
+        
 
-        # img1=Image.open(r"C:\Users\jasle\Downloads\[Original size] topic #5.png")
-        # img1=img1.resize((1600,950),Image.ADAPTIVE)
-        # self.photoimg1=ImageTk.PhotoImage(img1)
-
-        # lblimg=Label(self.root,image=self.photoimg1,bd=4,relief=RIDGE)
-        # lblimg.place(x=0,y=0,width=1600,height=950)
-
-        self.firstLbl = Label(self.root, text = 'Admin name',fg = 'black',bg='#29465B', font = ('Britannic Bold', 15, 'bold'), wraplength=400, justify='left') 
-        self.firstLbl.pack() 
-        self.firstLbl.place(x = 500, y = 500) 
-        self.userEntry = Entry(self.root,font=('sans a serif',15))
-        self.userEntry.place(x = 650, y = 500,height=30) 
-
-        self.passLbl = Label(self.root, text = 'Password',fg = 'black',bg='#29465B',font = ('Britannic Bold', 15, 'bold'), wraplength=400, justify='left') 
-        self.passLbl.pack() 
-        self.passLbl.place(x = 500, y = 550) 
-        self.passEntry = Entry(self.root,show='*',font=('sans a serif',15)) 
-        self.passEntry.place(x = 650, y = 550,height=30) 
-
-        self.loginBtn = Button(self.root,text='LOGIN',font=('sans-serif',13)) 
-        self.loginBtn.place(x=700,y=650,width=100,height=30)
-
-        self.root.mainloop()
-
-if __name__=='__main__':
-       admin()
+if __name__ =='__main__':
+        admin_login()

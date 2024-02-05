@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox 
-import login
+import login 
 from PIL import ImageTk,Image
 class Dashboard:
         def __init__(self):
