@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox 
-import dashboard_admin
+import dashboard_admin,dbms2
 class admin_login:
         def __init__(self):
             self.root = Tk()
@@ -21,7 +21,7 @@ class admin_login:
             self.contentpanel = Frame(self.frame,width=1200,height=700,bg="white") # #454545
             self.contentpanel.place(x=250,y=70)
 
-            self.firstLbl = Label(self.frame, text = 'Admin name', fg = 'black',bg='WHITE', font="Arial 20 bold") 
+            self.firstLbl = Label(self.frame, text = 'Username', fg = 'black',bg='WHITE', font="Arial 20 bold") 
             self.firstLbl.place(x=685,y=280)
             self.user_entry = Entry(self.frame, width=30, font="Arial 12", border=0)
             self.user_entry.place(x=865,y=286)
@@ -41,8 +41,18 @@ class admin_login:
             self.root.mainloop()
 
         def loginnfn(self):
-               self.root.destroy()
-               dashboard_admin.Dashboard()             
+           username = self.user_entry.get()
+           password = self.pass_entry.get()
+           if username and password:
+                if(dbms2.loginadmin((username,password))):
+                  self.root.destroy()
+                  dashboard_admin.Dashboard()
+                else:
+                   messagebox.showwarning("Warning","Credentials not matched")
+             
+           else:
+               messagebox.showwarning("Warning","Enter all Fields")
+                     
         
 
 if __name__ =='__main__':
