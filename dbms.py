@@ -22,3 +22,19 @@ def loginuser(data):
         return cursor.fetchone()
     except:
         return False
+    
+def enterbookdetail(data):
+    try:
+        cursor.execute("INSERT INTO `books` (`bookname`,`authorname`,`location`) VALUES (%s,%s,%s)",data)
+        Info.commit()
+        return True
+    except:
+        return False
+    
+def fetchbookdetails():
+    try:
+        cursor.execute("SELECT * FROM `books`")
+        return cursor.fetchall()
+    except Exception as e:
+        print(e)
+        return False

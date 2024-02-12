@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox 
-import login
+import login, book_admin
 from PIL import ImageTk,Image
 class Dashboard:
         def __init__(self):
@@ -91,7 +91,7 @@ class Dashboard:
                pass
         
         def bookfn(self):
-               pass
+               book_admin.Book(self.contentpanel)
 
         def memberfn(self):
                pass
