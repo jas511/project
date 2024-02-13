@@ -16,7 +16,7 @@ class Book():
         self.tree.place(x=140,y=300)
         self.scrollbar = ttk.Scrollbar(self.content,orient="vertical",command=self.tree.yview)
         self.tree.configure(yscrollcommand=self.scrollbar.set)
-        self.scrollbar.place(x=940,y=300,height=220)
+        self.scrollbar.place(x=722,y=301,height=224)
 
         try:
             result = dbms.fetchbookdetails()
