@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import dbms
-class returnbook():
+class fine():
     def __init__(self,frame):
         self.content = frame
         for widget in self.content.winfo_children():
@@ -16,6 +16,8 @@ class returnbook():
         self.tree.column('authorname',anchor=CENTER,width=300)
         self.tree.heading('location',text='Location')
         self.tree.column('location',anchor=CENTER,width=300)
+        self.tree.heading('fine',text='Location')
+        self.tree.column('fine',anchor=CENTER,width=300)
         self.tree.place(x=100,y=230)
         self.scrollbar = ttk.Scrollbar(self.content,orient="vertical",command=self.tree.yview)
         self.tree.configure(yscrollcommand=self.scrollbar.set)
@@ -29,7 +31,7 @@ class returnbook():
             pass
 
 
-        self.title = Label(self.content,text="Returned books are listed here",font="Arial 25 bold",bg="white")
+        self.title = Label(self.content,text="Fine amount is listed here",font="Arial 25 bold",bg="white")
         self.title.place(x=350,y=20)
 
         self.booknamelbl = Label(self.content,text="Enter Book Name",font="Arial 12",bg="white")
@@ -47,6 +49,7 @@ class returnbook():
         self.locationinp = Entry(self.content,width=12,font="Arial 10 bold",bd=3)
         self.locationinp.place(x=910,y=100)
 
+        
         self.enterdetails = Button(self.content,text="Enter Book Details",bg="#56a9e8",fg="white",font="Arial 10 bold",command=self.enterdetailfn)
         self.enterdetails.place(x=910,y=150)
     

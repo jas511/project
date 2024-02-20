@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import dbms
-class returnbook():
+class notreturn():
     def __init__(self,frame):
         self.content = frame
         for widget in self.content.winfo_children():
@@ -29,7 +29,7 @@ class returnbook():
             pass
 
 
-        self.title = Label(self.content,text="Returned books are listed here",font="Arial 25 bold",bg="white")
+        self.title = Label(self.content,text="Books that have not been returned are listed here",font="Arial 25 bold",bg="white")
         self.title.place(x=350,y=20)
 
         self.booknamelbl = Label(self.content,text="Enter Book Name",font="Arial 12",bg="white")

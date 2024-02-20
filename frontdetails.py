@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import Image, ImageTk
-import book_admin, members_admin, newspaper_admin,issue_admin,return_admin
+import book_admin, members_admin, newspaper_admin,issue_admin,return_admin,notreturned_admin,fine_admin
 import login
 from tkinter import messagebox
 
@@ -83,7 +83,7 @@ class FrontDetails():
                 login.FrameWindow()
 
         def notreturnfn(self):
-               pass
+               notreturned_admin.notreturn(self.contentpanel)
 
         def finefn(self):
-               pass
+               fine_admin.fine(self.contentpanel)
