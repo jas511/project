@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 import dbms
-class Book():
+class issue():
     def __init__(self,frame):
         self.content = frame
         for widget in self.content.winfo_children():

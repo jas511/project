@@ -14,7 +14,7 @@ class Members():
         self.tree.column('userid',anchor=CENTER,width=300)
         self.tree.heading('username',text='Name')
         self.tree.column('username',anchor=CENTER,width=300)
-        self.tree.heading('emailid',text='E-Mail ID')
+        self.tree.heading('emailid',text='E-Mail Id')
         self.tree.column('emailid',anchor=CENTER,width=300)
         self.tree.place(x=100,y=100)
         self.scrollbar = ttk.Scrollbar(self.content,orient="vertical",command=self.tree.yview)
