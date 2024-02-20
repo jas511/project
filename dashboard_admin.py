@@ -21,10 +21,10 @@ class Dashboard:
             self.toppanel = Frame(self.frame,width=1500,height=70,bg="#fca232")
             self.toppanel.place(x=250,y=0)
 
-            self.adminphoto = Image.open(r"C:\Users\jasle\OneDrive\Documents\GitHub\project\images\user.png").resize((70,70))
-            self.adminphototk = ImageTk.PhotoImage(self.adminphoto)
-            self.adminphotolbl = Label(self.leftpanel,image=self.adminphototk,bg="#333232")
-            self.adminphotolbl.place(x=90,y=40)
+       #      self.adminphoto = Image.open("project\images\user.png").resize((70,70))
+       #      self.adminphototk = ImageTk.PhotoImage(self.adminphoto)
+       #      self.adminphotolbl = Label(self.leftpanel,image=self.adminphototk,bg="#333232")
+       #      self.adminphotolbl.place(x=90,y=40)
             self.adminlbl = Label(self.leftpanel,text="ADMIN",bg="#333232",fg="white",font="Arial 15")
             self.adminlbl.place(x=92,y=120)
 

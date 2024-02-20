@@ -37,6 +37,20 @@ def fetchbookdetails():
     except:
         return False
     
+def fetchissuedetails():
+    try:
+        cursor.execute("SELECT * FROM `issue`")
+        return cursor.fetchall()
+    except:
+        return False
+    
+def fetchreturndetails():
+    try:
+        cursor.execute("SELECT * FROM `issue` WHERE `status` = %s",'r')
+        return cursor.fetchall()
+    except:
+        return False
+    
 def fetchmemberdetails():
     try:
         cursor.execute("SELECT * FROM `users`")
@@ -49,5 +63,28 @@ def fetchnewspaperdetails():
     try:
         cursor.execute("SELECT * FROM `newspaper`")
         return cursor.fetchall()
+    except:
+        return False
+    
+def checkbookavailability(bookname):
+    try:
+        cursor.execute("SELECT * FROM `books` WHERE `bookname` = %s",bookname)
+        return cursor.fetchone()
+    except:
+        return False
+    
+def enterissuedetail(details):
+    try:
+        cursor.execute("INSERT into `issue` (`bookname`,`username`,`id`) VALUES(%s,%s,%s)",details)
+        Info.commit()
+        return True
+    except:
+        return False
+
+def enterreturndetail(details):
+    try:
+        cursor.execute("INSERT into `issue` (`bookname`,`username`,`id`) VALUES(%s,%s,%s)",details)
+        Info.commit()
+        return True
     except:
         return False
